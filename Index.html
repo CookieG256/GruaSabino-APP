@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grúas Sabino - Puerto Varas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #09090b;
+            background-image:
+                linear-gradient(rgba(9, 9, 11, 0.58), rgba(9, 9, 11, 0.68)),
+                url("assets/site-background.jpg"),
+                radial-gradient(ellipse at 50% 0%, rgba(120, 53, 15, 0.18), transparent 34rem);
+            background-position: center, center 58%, center top;
+            background-size: cover, cover, auto;
+            background-attachment: fixed, fixed, scroll;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                max-width: 24rem !important;
+                padding: 0.75rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+
+            main > * + * {
+                margin-top: 1rem !important;
+            }
+
+            main > div:first-child {
+                padding: 1.1rem !important;
+                border-radius: 1.25rem !important;
+            }
+
+            main > div:first-child img {
+                max-width: 19rem !important;
+                margin-bottom: 0.6rem !important;
+            }
+
+            main > div:first-child h1 {
+                font-size: 1.35rem !important;
+                line-height: 1.8rem !important;
+            }
+
+            main > div:nth-of-type(2) > a {
+                padding: 0.8rem 1rem !important;
+                border-radius: 1rem !important;
+            }
+
+            main section > div > div.bg-gradient-to-br {
+                padding: 0.8rem !important;
+            }
+
+            main section > div.divide-y > button {
+                padding: 0.65rem 0.75rem !important;
+            }
+
+            main section > div.rounded-2xl:not(.divide-y) {
+                padding: 0.85rem !important;
+            }
+        }
+
+        #service-dialog::backdrop {
+            background: rgba(0, 0, 0, 0.78);
+            backdrop-filter: blur(6px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 bg-neutral-950/85 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-md mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-xl font-black tracking-wider bg-neutral-900/80 px-3 py-1.5 rounded-xl border border-white/10 shadow-lg">
+                    <span class="text-white">Grúas</span> <span class="text-amber-400">Sabino</span>
+                </span>
+            </div>
+            <div class="text-xs bg-amber-400/10 text-amber-300 font-bold px-3 py-1.5 rounded-full border border-amber-400/20">
+                <i class="fa-solid fa-circle text-[8px] animate-pulse mr-1 text-amber-400"></i> 24 / 7
+            </div>
+            <div id="language-menu" class="relative">
+                <button id="language-trigger" type="button" class="flex items-center gap-1.5 rounded-lg border border-white/10 bg-neutral-900 px-2.5 py-1.5 text-xs font-bold text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-amber-400" aria-label="Elegir idioma" aria-haspopup="menu" aria-expanded="false">
+                    <span id="language-flag" aria-hidden="true">🇨🇱</span>
+                    <span id="language-code">ES</span>
+                    <i class="fa-solid fa-chevron-down ml-0.5 text-[9px] text-neutral-400" aria-hidden="true"></i>
+                </button>
+                <div id="language-options" class="absolute right-0 top-full z-50 mt-2 hidden min-w-40 overflow-hidden rounded-xl border border-white/10 bg-neutral-900 p-1 shadow-xl" role="menu" aria-label="Idiomas disponibles">
+                    <button type="button" data-language="es" class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-white hover:bg-white/10" role="menuitemradio" aria-checked="true"><span aria-hidden="true">🇨🇱</span>Español</button>
+                    <button type="button" data-language="pt" class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-white hover:bg-white/10" role="menuitemradio" aria-checked="false"><span aria-hidden="true">🇧🇷</span>Português</button>
+                    <button type="button" data-language="en" class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-white hover:bg-white/10" role="menuitemradio" aria-checked="false"><span aria-hidden="true">🇬🇧</span>English</button>
+                    <button type="button" data-language="de" class="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-white hover:bg-white/10" role="menuitemradio" aria-checked="false"><span aria-hidden="true">🇩🇪</span>Deutsch</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-md mx-auto p-4 space-y-5 pb-12">
+
+        <!-- Hero Status Box -->
+        <div class="relative overflow-hidden bg-gradient-to-br from-neutral-900 via-neutral-900 to-amber-950/40 border border-amber-400/20 rounded-3xl p-6 text-center shadow-2xl shadow-amber-950/20">
+            <div class="absolute -top-12 -right-8 h-36 w-36 rounded-full bg-amber-400/10 blur-3xl"></div>
+            <div class="relative">
+                <img src="assets/vehicles-header.svg" alt="Grúa trasladando un automóvil" data-i18n-attr="heroImageAlt" class="relative mx-auto mb-4 block h-auto w-full max-w-sm object-contain [mix-blend-mode:screen]">
+                <span data-i18n="heroKicker" class="text-[11px] uppercase tracking-[0.22em] text-amber-300 font-bold">Asistencia en ruta · 24/7</span>
+                <h1 class="text-2xl font-black mt-2 text-white">Grúas Sabino</h1>
+                <p data-i18n="heroRegion" class="text-sm text-neutral-300 mt-1">Puerto Varas y toda la región</p>
+            </div>
+        </div>
+
+        <!-- BIG ACTION BUTTONS (ZERO FRU-FRU) -->
+        <div class="space-y-3">
+            <!-- Call Button -->
+            <a href="tel:+56961228851" class="w-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 active:scale-[0.98] transition-all text-neutral-950 font-bold py-4 px-6 rounded-2xl flex items-center justify-center space-x-3 shadow-lg shadow-amber-500/20 border border-amber-200/50">
+                <i class="fa-solid fa-phone-volume text-2xl animate-bounce"></i>
+                <div class="text-left">
+                    <div data-i18n="callSubtitle" class="text-xs uppercase tracking-wider text-neutral-800">Asistencia inmediata</div>
+                    <div data-i18n="callButton" class="text-lg font-black">Llamar ahora</div>
+                </div>
+            </a>
+
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/56961228851?text=Hola,%20necesito%20asistencia%20con%20mi%20vehículo." target="_blank" rel="noopener noreferrer" class="w-full bg-emerald-600 hover:bg-emerald-500 active:scale-[0.98] transition-all text-white font-bold py-4 px-6 rounded-2xl flex items-center justify-center space-x-3 shadow-lg shadow-emerald-600/20 border border-emerald-400/40">
+                <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+                <div class="text-left">
+                    <div data-i18n="whatsappSubtitle" class="text-xs uppercase tracking-wider text-emerald-100">Enviar ubicación o foto</div>
+                    <div data-i18n="whatsappButton" class="text-lg font-black">WhatsApp</div>
+                </div>
+            </a>
+        </div>
+
+        <hr class="border-neutral-800 my-2">
+
+        <!-- Flota y Capacidad -->
+        <section class="space-y-3">
+            <h2 class="flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-neutral-400">
+                <img src="assets/service-icons/fleet.png" alt="" data-i18n-attr="fleetIconAlt:alt" class="h-7 w-7 shrink-0 rounded-lg object-contain">
+                <span data-i18n="fleetHeading">Nuestra Flota y Capacidad</span>
+            </h2>
+            <div class="grid grid-cols-1 gap-3">
+                <div class="bg-gradient-to-br from-neutral-900 to-neutral-900/70 border border-white/10 rounded-2xl p-4">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/service-icons/flatbed-tow.png" alt="" data-i18n-attr="flatbedIconAlt:alt" class="h-12 w-12 shrink-0 rounded-xl object-cover">
+                        <div data-i18n="flatbedTitle" class="font-bold text-sm text-white">Grúa con Cama</div>
+                    </div>
+                    <p data-i18n="flatbedDescription" class="text-xs text-neutral-400 mt-3">Traslado de vehículos urbanos e interurbanos, incluidos autos bajos, deportivos y vehículos bloqueados.</p>
+                </div>
+                <div class="bg-gradient-to-br from-neutral-900 to-neutral-900/70 border border-white/10 rounded-2xl p-4">
+                    <div class="flex items-center gap-3">
+                        <img src="assets/service-icons/lift-tow.png" alt="" data-i18n-attr="liftIconAlt:alt" class="h-12 w-12 shrink-0 rounded-xl object-cover">
+                        <div data-i18n="liftTitle" class="font-bold text-sm text-white">Grúa de Levante</div>
+                    </div>
+                    <p data-i18n="liftDescription" class="text-xs text-neutral-400 mt-3">Para vehículos eléctricos bloqueados y vehículos en espacios subterráneos.</p>
+                </div>
+            </div>
+            <div class="bg-amber-400/5 border border-amber-400/15 rounded-2xl p-4 text-xs text-neutral-300 flex items-center space-x-3">
+                <i class="fa-solid fa-shield-halved text-amber-400 text-lg"></i>
+                <div><strong data-i18n="supportTitle" class="text-white">7 Grúas de Apoyo:</strong> <span data-i18n="supportDescription">Si una unidad está ocupada, contamos con respaldo inmediato en la zona.</span></div>
+            </div>
+        </section>
+
+        <!-- Servicios Principales -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-neutral-400 flex items-center">
+                <i class="fa-solid fa-screwdriver-wrench text-amber-400 mr-2"></i> <span data-i18n="servicesHeading">Servicios Principales</span>
+            </h2>
+            <div class="bg-neutral-900/80 border border-white/10 rounded-2xl divide-y divide-white/5 text-xs overflow-hidden">
+                <button type="button" data-service-title="Traslado de Vehículos Urbanos e Interurbanos" data-service-description="Trasladamos vehículos de forma segura dentro de la ciudad y entre distintas localidades." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/urban-transfer.png" alt="" data-i18n-attr="urbanIconAlt:alt" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Traslado de Vehículos Urbanos e Interurbanos</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Grupajes Semanales a Santiago en Automovilera" data-service-description="Coordinamos el traslado de vehículos en grupajes semanales con destino a Santiago." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/weekly-groupage.png" alt="" data-i18n-attr="groupageIconAlt:alt" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Grupajes Semanales a Santiago en Automovilera</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Traslado de Vehículo Bloqueado" data-service-description="Asistencia y traslado para vehículos que no pueden continuar circulando." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/blocked-vehicle.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Traslado de Vehículo Bloqueado</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Traslado de Vehículo Eléctrico" data-service-description="Traslado cuidadoso de vehículos eléctricos, considerando sus necesidades especiales." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/electric-vehicle.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Traslado de Vehículo Eléctrico</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Traslado de Vehículo en Espacio Subterráneo" data-service-description="Resolvemos traslados en estacionamientos subterráneos y espacios de acceso reducido." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/underground-transfer.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Traslado de Vehículo en Espacio Subterráneo</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Traslado Pasajero" data-service-description="Servicio de traslado de pasajeros coordinado según el lugar de recogida y destino." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/passenger-transfer.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Traslado Pasajero</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Cambio de Neumático" data-service-description="Asistencia en ruta para ayudarte a resolver problemas con los neumáticos de tu vehículo." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/tire-change.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Cambio de Neumático</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Puente y Análisis de Batería" data-service-description="Revisamos la batería y brindamos apoyo para que puedas continuar tu viaje." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/battery-assistance.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Puente y Análisis de Batería</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Apertura de Vehículo" data-service-description="Asistencia para acceder a tu vehículo cuando las llaves quedaron dentro o no puedes abrirlo." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/vehicle-unlock.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Apertura de Vehículo</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Traslado de Motos" data-service-description="Trasladamos motocicletas con cuidado y de forma segura a su destino." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/motorcycle-transfer.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Traslado de Motos</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+                <button type="button" data-service-title="Entrega de Combustible" data-service-description="Entrega de combustible para ayudarte a retomar el camino cuando te quedas sin carga." class="service-option w-full p-3.5 flex items-center justify-between gap-3 text-left transition hover:bg-white/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-400"><span class="flex min-w-0 items-center gap-3"><img src="assets/service-icons/fuel-delivery.png" alt="" class="h-9 w-9 shrink-0 rounded-xl object-cover"><span class="font-medium text-white">Entrega de Combustible</span></span><i class="fa-solid fa-arrow-up-right-from-square shrink-0 text-amber-400" aria-hidden="true"></i></button>
+            </div>
+        </section>
+
+        <!-- Cobertura -->
+        <section class="space-y-3">
+            <h2 class="text-sm font-bold uppercase tracking-wider text-neutral-400 flex items-center">
+                <i class="fa-solid fa-map-location-dot text-amber-400 mr-2"></i> <span data-i18n="coverageHeading">Cobertura y Zona</span>
+            </h2>
+            <div class="bg-neutral-900/80 border border-white/10 rounded-2xl p-4 text-xs space-y-3 text-neutral-300">
+                <p><strong data-i18n="localLabel" class="text-amber-300">Local:</strong> <span data-i18n="localValue">Puerto Varas, Puerto Montt y alrededores.</span></p>
+                <p><strong data-i18n="routesLabel" class="text-amber-300">Rutas y Pueblos:</strong> <span data-i18n="routesValue">Llanada Grande, Río Puelo, Cochamó, Volcán Osorno y otros sectores.</span></p>
+                <p><strong data-i18n="distanceLabel" class="text-amber-300">Larga Distancia:</strong> <span data-i18n="distanceValue">Desde Puerto Varas a Valdivia, Chaitén, Chiloé, Santiago y otros destinos.</span></p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-[10px] text-neutral-500 pt-4 border-t border-white/10">
+            Grúas Sabino &copy; 2026. <span data-i18n="rights">Todos los derechos reservados.</span>
+        </footer>
+
+    </main>
+
+    <dialog id="service-dialog" class="m-auto max-h-[90vh] w-[calc(100%-2rem)] max-w-xl overflow-hidden rounded-3xl border border-amber-400/20 bg-neutral-950 p-0 text-neutral-100 shadow-2xl shadow-black/60">
+        <div class="max-h-[90vh] overflow-y-auto">
+            <div class="sticky top-0 z-10 flex items-start justify-between gap-4 border-b border-white/10 bg-neutral-950/95 p-5 backdrop-blur">
+                <div>
+                    <p data-i18n="dialogKicker" class="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-300">Servicio Grúas Sabino</p>
+                    <h2 id="service-dialog-title" class="mt-1 text-lg font-black text-white"></h2>
+                </div>
+                <button type="button" data-close-dialog data-i18n-attr="closeLabel" class="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-neutral-300 transition hover:bg-white/10" aria-label="Cerrar">
+                    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="p-5">
+                <p id="service-dialog-description" class="text-sm leading-relaxed text-neutral-300"></p>
+                <div class="mt-5 flex items-center justify-between">
+                    <h3 data-i18n="galleryHeading" class="text-xs font-bold uppercase tracking-wider text-neutral-200">Galería del servicio</h3>
+                    <span data-i18n="galleryCount" class="text-[10px] text-neutral-500">5 espacios para fotos</span>
+                </div>
+                <div class="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    <div class="photo-placeholder col-span-2 flex aspect-[2/1] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-amber-400/25 bg-gradient-to-br from-amber-400/10 to-neutral-900 text-amber-300 sm:col-span-2">
+                        <i class="fa-solid fa-image text-2xl" aria-hidden="true"></i><span data-i18n="photo1" class="text-[10px] font-semibold text-neutral-400">Foto 1</span>
+                    </div>
+                    <div class="photo-placeholder flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-white/15 bg-gradient-to-br from-white/5 to-neutral-900 text-neutral-400"><i class="fa-solid fa-camera text-xl" aria-hidden="true"></i><span data-i18n="photo2" class="text-[10px] font-semibold">Foto 2</span></div>
+                    <div class="photo-placeholder flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-white/15 bg-gradient-to-br from-white/5 to-neutral-900 text-neutral-400"><i class="fa-solid fa-camera text-xl" aria-hidden="true"></i><span data-i18n="photo3" class="text-[10px] font-semibold">Foto 3</span></div>
+                    <div class="photo-placeholder flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-white/15 bg-gradient-to-br from-white/5 to-neutral-900 text-neutral-400"><i class="fa-solid fa-camera text-xl" aria-hidden="true"></i><span data-i18n="photo4" class="text-[10px] font-semibold">Foto 4</span></div>
+                    <div class="photo-placeholder flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-white/15 bg-gradient-to-br from-white/5 to-neutral-900 text-neutral-400"><i class="fa-solid fa-camera text-xl" aria-hidden="true"></i><span data-i18n="photo5" class="text-[10px] font-semibold">Foto 5</span></div>
+                </div>
+                <p data-i18n="galleryHelp" class="mt-3 text-center text-[10px] text-neutral-500">Espacios de galería listos para agregar fotos reales.</p>
+            </div>
+        </div>
+    </dialog>
+
+    <script>
+        const languageContent = {
+            es: {
+                heroImageAlt: "Grúa trasladando un automóvil",
+                heroKicker: "Asistencia en ruta · 24/7",
+                heroRegion: "Puerto Varas y toda la región",
+                callSubtitle: "Asistencia inmediata",
+                callButton: "Llamar ahora",
+                whatsappSubtitle: "Enviar ubicación o foto",
+                whatsappButton: "WhatsApp",
+                whatsappMessage: "Hola, necesito asistencia con mi vehículo.",
+                fleetHeading: "Nuestra Flota y Capacidad",
+                fleetIconAlt: "Ícono de varios vehículos de asistencia",
+                flatbedIconAlt: "Grúa con cama transportando un vehículo",
+                liftIconAlt: "Grúa de levante con gancho",
+                urbanIconAlt: "Vehículo circulando por una ciudad",
+                groupageIconAlt: "Calendario y vehículo para grupajes semanales",
+                flatbedTitle: "Grúa con Cama",
+                flatbedDescription: "Traslado de vehículos urbanos e interurbanos, incluidos autos bajos, deportivos y vehículos bloqueados.",
+                liftTitle: "Grúa de Levante",
+                liftDescription: "Para vehículos eléctricos bloqueados y vehículos en espacios subterráneos.",
+                supportTitle: "7 Grúas de Apoyo:",
+                supportDescription: "Si una unidad está ocupada, contamos con respaldo inmediato en la zona.",
+                servicesHeading: "Servicios Principales",
+                coverageHeading: "Cobertura y Zona",
+                localLabel: "Local:",
+                localValue: "Puerto Varas, Puerto Montt y alrededores.",
+                routesLabel: "Rutas y Pueblos:",
+                routesValue: "Llanada Grande, Río Puelo, Cochamó, Volcán Osorno y otros sectores.",
+                distanceLabel: "Larga Distancia:",
+                distanceValue: "Desde Puerto Varas a Valdivia, Chaitén, Chiloé, Santiago y otros destinos.",
+                rights: "Todos los derechos reservados.",
+                dialogKicker: "Servicio Grúas Sabino",
+                closeLabel: "Cerrar",
+                galleryHeading: "Galería del servicio",
+                galleryCount: "5 espacios para fotos",
+                photo1: "Foto 1",
+                photo2: "Foto 2",
+                photo3: "Foto 3",
+                photo4: "Foto 4",
+                photo5: "Foto 5",
+                galleryHelp: "Espacios de galería listos para agregar fotos reales.",
+                services: [
+                    ["Traslado de Vehículos Urbanos e Interurbanos", "Trasladamos vehículos de forma segura dentro de la ciudad y entre distintas localidades."],
+                    ["Grupajes Semanales a Santiago en Automovilera", "Coordinamos el traslado de vehículos en grupajes semanales con destino a Santiago."],
+                    ["Traslado de Vehículo Bloqueado", "Asistencia y traslado para vehículos que no pueden continuar circulando."],
+                    ["Traslado de Vehículo Eléctrico", "Traslado cuidadoso de vehículos eléctricos, considerando sus necesidades especiales."],
+                    ["Traslado de Vehículo en Espacio Subterráneo", "Resolvemos traslados en estacionamientos subterráneos y espacios de acceso reducido."],
+                    ["Traslado Pasajero", "Servicio de traslado de pasajeros coordinado según el lugar de recogida y destino."],
+                    ["Cambio de Neumático", "Asistencia en ruta para ayudarte a resolver problemas con los neumáticos de tu vehículo."],
+                    ["Puente y Análisis de Batería", "Revisamos la batería y brindamos apoyo para que puedas continuar tu viaje."],
+                    ["Apertura de Vehículo", "Asistencia para acceder a tu vehículo cuando las llaves quedaron dentro o no puedes abrirlo."],
+                    ["Traslado de Motos", "Trasladamos motocicletas con cuidado y de forma segura a su destino."],
+                    ["Entrega de Combustible", "Entrega de combustible para ayudarte a retomar el camino cuando te quedas sin carga."]
+                ]
+            },
+            pt: {
+                heroImageAlt: "Guincho transportando um automóvel",
+                heroKicker: "Assistência na estrada · 24/7",
+                heroRegion: "Puerto Varas e toda a região",
+                callSubtitle: "Assistência imediata",
+                callButton: "Ligar agora",
+                whatsappSubtitle: "Enviar localização ou foto",
+                whatsappButton: "WhatsApp",
+                whatsappMessage: "Olá, preciso de assistência para meu veículo.",
+                fleetHeading: "Nossa Frota e Capacidade",
+                fleetIconAlt: "Ícone de vários veículos de assistência",
+                flatbedIconAlt: "Guincho plataforma transportando um veículo",
+                liftIconAlt: "Guincho de levante com gancho",
+                urbanIconAlt: "Veículo circulando pela cidade",
+                groupageIconAlt: "Calendário e veículo para cargas compartilhadas semanais",
+                flatbedTitle: "Guincho Plataforma",
+                flatbedDescription: "Transporte de veículos urbanos e interurbanos, incluindo carros baixos, esportivos e veículos bloqueados.",
+                liftTitle: "Guincho de Levante",
+                liftDescription: "Para veículos elétricos bloqueados e veículos em espaços subterrâneos.",
+                supportTitle: "7 Guinchos de Apoio:",
+                supportDescription: "Se uma unidade estiver ocupada, contamos com apoio imediato na região.",
+                servicesHeading: "Serviços Principais",
+                coverageHeading: "Cobertura e Região",
+                localLabel: "Local:",
+                localValue: "Puerto Varas, Puerto Montt e arredores.",
+                routesLabel: "Rotas e Povoados:",
+                routesValue: "Llanada Grande, Río Puelo, Cochamó, Vulcão Osorno e outros locais.",
+                distanceLabel: "Longa Distância:",
+                distanceValue: "De Puerto Varas para Valdivia, Chaitén, Chiloé, Santiago e outros destinos.",
+                rights: "Todos os direitos reservados.",
+                dialogKicker: "Serviço Grúas Sabino",
+                closeLabel: "Fechar",
+                galleryHeading: "Galeria do serviço",
+                galleryCount: "5 espaços para fotos",
+                photo1: "Foto 1",
+                photo2: "Foto 2",
+                photo3: "Foto 3",
+                photo4: "Foto 4",
+                photo5: "Foto 5",
+                galleryHelp: "Espaços da galeria prontos para receber fotos reais.",
+                services: [
+                    ["Transporte de Veículos Urbanos e Interurbanos", "Transportamos veículos com segurança na cidade e entre diferentes localidades."],
+                    ["Transporte Semanal de Veículos para Santiago", "Coordenamos o transporte semanal de veículos com destino a Santiago."],
+                    ["Transporte de Veículo Imobilizado", "Assistência e transporte para veículos que não conseguem continuar circulando."],
+                    ["Transporte de Veículo Elétrico", "Transporte cuidadoso de veículos elétricos, considerando suas necessidades especiais."],
+                    ["Transporte em Espaço Subterrâneo", "Realizamos transportes em estacionamentos subterrâneos e locais de acesso reduzido."],
+                    ["Transporte de Passageiros", "Serviço de transporte de passageiros combinado conforme o local de embarque e destino."],
+                    ["Troca de Pneu", "Assistência na estrada para ajudar com problemas nos pneus do veículo."],
+                    ["Chupeta e Análise da Bateria", "Verificamos a bateria e ajudamos você a continuar a viagem."],
+                    ["Abertura de Veículo", "Assistência para acessar o veículo quando as chaves ficam dentro ou ele não abre."],
+                    ["Transporte de Motos", "Transportamos motocicletas com cuidado e segurança até o destino."],
+                    ["Entrega de Combustível", "Entrega de combustível para ajudar você a voltar à estrada quando ficar sem."],
+                ]
+            },
+            en: {
+                heroImageAlt: "Tow truck transporting a car",
+                heroKicker: "Roadside assistance · 24/7",
+                heroRegion: "Puerto Varas and the surrounding region",
+                callSubtitle: "Immediate assistance",
+                callButton: "Call now",
+                whatsappSubtitle: "Send your location or a photo",
+                whatsappButton: "WhatsApp",
+                whatsappMessage: "Hello, I need assistance with my vehicle.",
+                fleetHeading: "Our Fleet and Capabilities",
+                fleetIconAlt: "Icon showing several assistance vehicles",
+                flatbedIconAlt: "Flatbed tow truck transporting a vehicle",
+                liftIconAlt: "Tow truck with a lifting hook",
+                urbanIconAlt: "Vehicle traveling through a city",
+                groupageIconAlt: "Calendar and vehicle for weekly groupage",
+                flatbedTitle: "Flatbed Tow Truck",
+                flatbedDescription: "Urban and intercity vehicle transport, including low-clearance, sports, and immobilized vehicles.",
+                liftTitle: "Wheel-Lift Tow Truck",
+                liftDescription: "For immobilized electric vehicles and vehicles in underground spaces.",
+                supportTitle: "7 Partner Tow Trucks:",
+                supportDescription: "If one unit is busy, immediate local backup is available.",
+                servicesHeading: "Main Services",
+                coverageHeading: "Service Area",
+                localLabel: "Local:",
+                localValue: "Puerto Varas, Puerto Montt, and nearby areas.",
+                routesLabel: "Routes and Towns:",
+                routesValue: "Llanada Grande, Río Puelo, Cochamó, Osorno Volcano, and other areas.",
+                distanceLabel: "Long Distance:",
+                distanceValue: "From Puerto Varas to Valdivia, Chaitén, Chiloé, Santiago, and other destinations.",
+                rights: "All rights reserved.",
+                dialogKicker: "Grúas Sabino Service",
+                closeLabel: "Close",
+                galleryHeading: "Service gallery",
+                galleryCount: "5 photo spaces",
+                photo1: "Photo 1",
+                photo2: "Photo 2",
+                photo3: "Photo 3",
+                photo4: "Photo 4",
+                photo5: "Photo 5",
+                galleryHelp: "Gallery spaces ready for real photos.",
+                services: [
+                    ["Urban and Intercity Vehicle Transport", "We safely transport vehicles within the city and between towns."],
+                    ["Weekly Vehicle Shipments to Santiago", "We coordinate weekly grouped vehicle transport to Santiago."],
+                    ["Immobilized Vehicle Transport", "Assistance and transport for vehicles that cannot continue driving."],
+                    ["Electric Vehicle Transport", "Careful transport for electric vehicles, taking their specific needs into account."],
+                    ["Underground Vehicle Recovery", "We handle transport from underground parking and other low-clearance spaces."],
+                    ["Passenger Transport", "Passenger transportation coordinated according to pickup point and destination."],
+                    ["Tire Change", "Roadside assistance for problems with your vehicle's tires."],
+                    ["Battery Jump-Start and Check", "We check the battery and provide support to help you continue your trip."],
+                    ["Vehicle Unlocking", "Help accessing your vehicle if the keys are locked inside or it will not open."],
+                    ["Motorcycle Transport", "We transport motorcycles carefully and safely to their destination."],
+                    ["Fuel Delivery", "Fuel delivery to help you get back on the road if you run out."]
+                ]
+            },
+            de: {
+                heroImageAlt: "Abschleppwagen transportiert ein Auto",
+                heroKicker: "Pannenhilfe · 24/7",
+                heroRegion: "Puerto Varas und die gesamte Region",
+                callSubtitle: "Sofortige Hilfe",
+                callButton: "Jetzt anrufen",
+                whatsappSubtitle: "Standort oder Foto senden",
+                whatsappButton: "WhatsApp",
+                whatsappMessage: "Hallo, ich benötige Hilfe mit meinem Fahrzeug.",
+                fleetHeading: "Unser Fuhrpark und unsere Kapazitäten",
+                fleetIconAlt: "Symbol mit mehreren Einsatzfahrzeugen",
+                flatbedIconAlt: "Abschleppwagen mit Plattform und Fahrzeug",
+                liftIconAlt: "Abschleppwagen mit Hebehaken",
+                urbanIconAlt: "Fahrzeugfahrt durch eine Stadt",
+                groupageIconAlt: "Kalender und Fahrzeug für wöchentliche Sammeltransporte",
+                flatbedTitle: "Abschleppwagen mit Plattform",
+                flatbedDescription: "Fahrzeugtransport in Städten und zwischen Orten, auch für tiefergelegte, sportliche und blockierte Fahrzeuge.",
+                liftTitle: "Abschleppwagen mit Hebevorrichtung",
+                liftDescription: "Für blockierte Elektrofahrzeuge und Fahrzeuge in unterirdischen Bereichen.",
+                supportTitle: "7 Partner-Abschleppwagen:",
+                supportDescription: "Wenn ein Fahrzeug im Einsatz ist, steht sofort Unterstützung in der Region bereit.",
+                servicesHeading: "Unsere Dienstleistungen",
+                coverageHeading: "Einsatzgebiet",
+                localLabel: "Lokal:",
+                localValue: "Puerto Varas, Puerto Montt und Umgebung.",
+                routesLabel: "Routen und Orte:",
+                routesValue: "Llanada Grande, Río Puelo, Cochamó, Vulkan Osorno und weitere Orte.",
+                distanceLabel: "Fernfahrten:",
+                distanceValue: "Ab Puerto Varas nach Valdivia, Chaitén, Chiloé, Santiago und weitere Ziele.",
+                rights: "Alle Rechte vorbehalten.",
+                dialogKicker: "Grúas Sabino Service",
+                closeLabel: "Schließen",
+                galleryHeading: "Servicegalerie",
+                galleryCount: "5 Fotofelder",
+                photo1: "Foto 1",
+                photo2: "Foto 2",
+                photo3: "Foto 3",
+                photo4: "Foto 4",
+                photo5: "Foto 5",
+                galleryHelp: "Galeriefelder zum Hinzufügen echter Fotos.",
+                services: [
+                    ["Fahrzeugtransport in Städten und zwischen Orten", "Wir transportieren Fahrzeuge sicher innerhalb der Stadt und zwischen verschiedenen Orten."],
+                    ["Wöchentliche Sammeltransporte nach Santiago", "Wir organisieren wöchentliche Sammeltransporte von Fahrzeugen nach Santiago."],
+                    ["Transport eines liegengebliebenen Fahrzeugs", "Hilfe und Transport für Fahrzeuge, die nicht weiterfahren können."],
+                    ["Transport von Elektrofahrzeugen", "Sorgfältiger Transport von Elektrofahrzeugen unter Berücksichtigung ihrer besonderen Anforderungen."],
+                    ["Fahrzeugbergung aus Tiefgaragen", "Wir übernehmen Transporte aus Tiefgaragen und anderen Bereichen mit begrenzter Zufahrt."],
+                    ["Personentransport", "Personentransport nach Vereinbarung von Abholort und Ziel."],
+                    ["Reifenwechsel", "Pannenhilfe bei Problemen mit den Reifen Ihres Fahrzeugs."],
+                    ["Starthilfe und Batterietest", "Wir prüfen die Batterie und helfen Ihnen, Ihre Fahrt fortzusetzen."],
+                    ["Fahrzeugöffnung", "Hilfe beim Öffnen, wenn der Schlüssel im Fahrzeug eingeschlossen ist oder es sich nicht öffnen lässt."],
+                    ["Motorradtransport", "Wir transportieren Motorräder sorgfältig und sicher zum Ziel."],
+                    ["Kraftstofflieferung", "Kraftstofflieferung, damit Sie weiterfahren können, wenn Ihnen der Kraftstoff ausgeht."]
+                ]
+            }
+        };
+
+        const languageMenu = document.getElementById("language-menu");
+        const languageTrigger = document.getElementById("language-trigger");
+        const languageOptions = document.getElementById("language-options");
+        const languageFlag = document.getElementById("language-flag");
+        const languageCode = document.getElementById("language-code");
+        const whatsappLink = document.querySelector('a[href^="https://wa.me/"]');
+        const serviceDialog = document.getElementById("service-dialog");
+        const serviceDialogTitle = document.getElementById("service-dialog-title");
+        const serviceDialogDescription = document.getElementById("service-dialog-description");
+        const serviceOptions = [...document.querySelectorAll(".service-option")];
+        let currentLanguage = "es";
+        const languageDetails = {
+            es: { flag: "🇨🇱", code: "ES" },
+            pt: { flag: "🇧🇷", code: "PT" },
+            en: { flag: "🇬🇧", code: "EN" },
+            de: { flag: "🇩🇪", code: "DE" }
+        };
+
+        function applyLanguage(language) {
+            const content = languageContent[language];
+            const details = languageDetails[language];
+            if (!content || !details) return;
+
+            currentLanguage = language;
+            document.documentElement.lang = language;
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                element.textContent = content[element.dataset.i18n];
+            });
+            document.querySelectorAll("[data-i18n-attr]").forEach((element) => {
+                const [key, attribute = "aria-label"] = element.dataset.i18nAttr.split(":");
+                element.setAttribute(attribute, content[key]);
+            });
+
+            serviceOptions.forEach((option, index) => {
+                option.querySelector(".font-medium").textContent = content.services[index][0];
+            });
+            whatsappLink.href = `https://wa.me/56961228851?text=${encodeURIComponent(content.whatsappMessage)}`;
+            languageFlag.textContent = details.flag;
+            languageCode.textContent = details.code;
+            languageOptions.querySelectorAll("[data-language]").forEach((option) => {
+                option.setAttribute("aria-checked", String(option.dataset.language === language));
+            });
+        }
+
+        languageTrigger.addEventListener("click", () => {
+            const isExpanded = languageTrigger.getAttribute("aria-expanded") === "true";
+            languageTrigger.setAttribute("aria-expanded", String(!isExpanded));
+            languageOptions.classList.toggle("hidden", isExpanded);
+        });
+
+        languageOptions.querySelectorAll("[data-language]").forEach((option) => {
+            option.addEventListener("click", () => {
+                applyLanguage(option.dataset.language);
+                languageTrigger.setAttribute("aria-expanded", "false");
+                languageOptions.classList.add("hidden");
+                languageTrigger.focus();
+            });
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!languageMenu.contains(event.target)) {
+                languageTrigger.setAttribute("aria-expanded", "false");
+                languageOptions.classList.add("hidden");
+            }
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && languageTrigger.getAttribute("aria-expanded") === "true") {
+                languageTrigger.setAttribute("aria-expanded", "false");
+                languageOptions.classList.add("hidden");
+                languageTrigger.focus();
+            }
+        });
+
+        serviceOptions.forEach((option, index) => {
+            option.addEventListener("click", () => {
+                const service = languageContent[currentLanguage].services[index];
+                serviceDialogTitle.textContent = service[0];
+                serviceDialogDescription.textContent = service[1];
+                serviceDialog.showModal();
+            });
+        });
+
+        applyLanguage("es");
+        serviceDialog.querySelector("[data-close-dialog]").addEventListener("click", () => serviceDialog.close());
+        serviceDialog.addEventListener("click", (event) => {
+            if (event.target === serviceDialog) serviceDialog.close();
+        });
+    </script>
+</body>
+</html>
