@@ -4,7 +4,7 @@ set -eu
 PROJECT_ROOT=$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)
 KEY_ALIAS=gruas-sabino-upload
 KEYCHAIN_SERVICE=cl.gruasabino.app.android-upload
-KEYSTORE_PATH="$PROJECT_ROOT/android/app/release-upload.jks"
+KEYSTORE_PATH="$PROJECT_ROOT/private/release-upload.jks"
 
 if [ ! -f "$KEYSTORE_PATH" ]; then
     echo "Android upload keystore was not found: $KEYSTORE_PATH" >&2
