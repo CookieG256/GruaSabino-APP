@@ -2,6 +2,8 @@
 
 O app usa HTML estático com CSS e fontes locais. `www/` é gerado pelo processo de build e é copiado para as plataformas Capacitor.
 
+O cabeçalho anima as rodas da ilustração da grua e do veículo; a animação respeita a configuração de movimento reduzido do sistema. O rodapé inclui a marca d'água `Made by: CookieG256`.
+
 ## Desenvolvimento
 
 ```sh
