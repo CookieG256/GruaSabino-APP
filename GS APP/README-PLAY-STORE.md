@@ -9,14 +9,29 @@
 - Version: `1.0.3` (versionCode `4`)
 - Target SDK: Android 16 / API 36
 - Store icon: `assets/icons/icon-512.png`
-- Privacy policy page: `privacy.html` (also published at the repository Pages URL once enabled)
+- Privacy policy page: [public URL](https://cookieg256.github.io/GruaSabino-APP/privacy.html)
 - Feature graphic (1024 x 500): `store-listing/feature-graphic-1024.png`
 - Phone screenshots: still need to be captured from the running app on an Android device or emulator (minimum two)
+
+## Store listing draft (Spanish)
+
+**Short description:** Asistencia en ruta 24/7 y traslado de vehículos en Puerto Varas.
+
+**Full description:**
+
+Grúas Sabino ofrece asistencia en ruta y traslado de vehículos en Puerto Varas, Puerto Montt y alrededores.
+
+Desde la aplicación puedes:
+- Llamar directamente para solicitar asistencia.
+- Abrir WhatsApp para contactar a Grúas Sabino.
+- Consultar los servicios disponibles y las zonas de cobertura.
+
+La información principal de la aplicación está incluida localmente y puede consultarse sin conexión. Para llamar o usar WhatsApp necesitas conexión y la aplicación correspondiente en tu dispositivo.
 
 ## Still needs owner action in Play Console
 
 1. Register/verify the developer account and pay Google's one-time fee if not already done.
-2. Create the app and enter the contact email, app category, support details, and public privacy-policy URL.
+2. Create the app and enter the support contact email and category; add the public privacy-policy URL above.
 3. Complete the Data safety, ads, target audience, content rating, app access, and government-app declarations truthfully.
 4. Add the store listing text, a 1024 x 500 feature graphic, and phone screenshots.
 5. Upload the AAB to internal testing, install and test it from Google Play, then submit to production. New personal accounts may have mandatory closed-testing eligibility requirements shown in Play Console.
