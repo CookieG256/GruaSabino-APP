@@ -1,6 +1,6 @@
 {
   "name": "gruas-sabino-mobile",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "description": "Aplicativo mobile da Grúas Sabino com Capacitor",
   "scripts": {
