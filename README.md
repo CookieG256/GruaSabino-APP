@@ -6,7 +6,15 @@ Aplicativo Android/iOS da Grúas Sabino, feito com HTML, Tailwind CSS e Capacito
 
 Baixe o APK de lançamento na página de [releases](https://github.com/CookieG256/GruaSabino-APP/releases/latest). No Android, abra o APK baixado e autorize a instalação quando solicitado.
 
+## Usar no iPhone
+
+Não há um IPA assinado para baixar pelo GitHub. Para usar agora, abra [gruasabino.vercel.app](https://gruasabino.vercel.app/) no Safari do iPhone e siga o [guia para adicionar o app à Tela de Início](https://cookieg256.github.io/GruaSabino-APP/iphone.html). Isso instala a versão web como PWA; não é um aplicativo iOS nativo e requer internet para carregar o site.
+
 Veja a [política de privacidade](https://cookieg256.github.io/GruaSabino-APP/privacy.html).
+
+## Arte atual
+
+![Arte promocional atualizada da Grúas Sabino](./GS%20APP/store-listing/feature-graphic-1024.png)
 
 ## Código-fonte
 
