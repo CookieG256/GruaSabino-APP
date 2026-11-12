@@ -6,9 +6,11 @@ Aplicativo Android/iOS da Grúas Sabino, feito com HTML, Tailwind CSS e Capacito
 
 Baixe o APK de lançamento na página de [releases](https://github.com/CookieG256/GruaSabino-APP/releases/latest). No Android, abra o APK baixado e autorize a instalação quando solicitado.
 
+Veja a [política de privacidade](https://cookieg256.github.io/GruaSabino-APP/privacy.html).
+
 ## Código-fonte
 
-O projeto Capacitor está em [`GS APP/`](./GS%20APP/). As instruções de desenvolvimento estão em [`GS APP/README.md`](./GS%20APP/README.md).
+O projeto Capacitor está em [`GS APP/`](./GS%20APP/). Consulte o [checklist da Play Store](./GS%20APP/README-PLAY-STORE.md) para os passos restantes.
 
 ## Privacidade e assinatura
 

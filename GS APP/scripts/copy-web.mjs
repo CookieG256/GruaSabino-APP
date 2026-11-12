@@ -13,7 +13,7 @@ const fontAwesomeRoot = join(
 );
 const fontAwesomeCss = join(assetsRoot, "vendor", "fontawesome", "css");
 
-for (const file of ["index.html", "manifest.json"]) {
+for (const file of ["index.html", "manifest.json", "privacy.html"]) {
   cpSync(join(projectRoot, file), join(webRoot, file));
 }
 

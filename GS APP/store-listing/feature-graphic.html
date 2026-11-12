@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024, initial-scale=1">
+    <title>Grúas Sabino — Google Play feature graphic</title>
+    <style>
+        * { box-sizing: border-box; }
+        html, body { width: 1024px; height: 500px; margin: 0; overflow: hidden; background: #09090b; color: #fff; font-family: system-ui, -apple-system, sans-serif; }
+        main { position: relative; display: flex; align-items: center; width: 100%; height: 100%; padding: 52px 68px; overflow: hidden; }
+        main::before { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(9,9,11,.96), rgba(9,9,11,.78) 58%, rgba(9,9,11,.38)), url("../assets/site-background.jpg") center 58% / cover; content: ""; }
+        .copy { position: relative; z-index: 1; width: 68%; }
+        .brand { margin: 0; font-size: 64px; line-height: 1; font-weight: 900; letter-spacing: -2px; }
+        .brand span { color: #fbbf24; }
+        .tag { margin: 26px 0 0; color: #fcd34d; font-size: 20px; font-weight: 800; letter-spacing: 6px; }
+        .region { margin: 15px 0 0; color: #e5e5e5; font-size: 26px; }
+        .logo { position: absolute; z-index: 1; right: 56px; width: 260px; height: 260px; object-fit: contain; filter: drop-shadow(0 15px 32px rgba(0,0,0,.6)); }
+        .rule { width: 116px; height: 5px; margin-top: 29px; border-radius: 999px; background: #dc2626; }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="copy">
+            <h1 class="brand">Grúas <span>Sabino</span></h1>
+            <p class="tag">ASISTENCIA EN RUTA · 24/7</p>
+            <p class="region">Puerto Varas y toda la región</p>
+            <div class="rule"></div>
+        </div>
+        <img class="logo" src="../assets/icon-only.png" alt="">
+    </main>
+</body>
+</html>
