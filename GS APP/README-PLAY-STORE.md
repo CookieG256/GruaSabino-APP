@@ -1,12 +1,12 @@
-# Play Store checklist — Grúas Sabino 1.0.4
+# Play Store checklist — Grúas Sabino 1.0.5
 
 ## Prepared locally
 
-- Android App Bundle: `android/app/build/outputs/bundle/release/Gruas-Sabino-1.0.4.aab`
-- Direct-install APK: `android/app/build/outputs/apk/release/Gruas-Sabino-1.0.4.apk`
+- Android App Bundle: `android/app/build/outputs/bundle/release/Gruas-Sabino-1.0.5.aab`
+- Direct-install APK: `android/app/build/outputs/apk/release/Gruas-Sabino-1.0.5.apk`
 - Package ID: `cl.gruasabino.app`
 - App name: `Grúas Sabino`
-- Version: `1.0.4` (versionCode `5`)
+- Version: `1.0.5` (versionCode `6`)
 - Target SDK: Android 16 / API 36
 - Store icon: `assets/icons/icon-512.png`
 - Privacy policy page: [public URL](https://cookieg256.github.io/GruaSabino-APP/privacy.html)
